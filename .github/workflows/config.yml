@@ -2,6 +2,8 @@ name: .NET
 
 on:
   push:
+    branches: [ feature/dotnet-solution ]
+  pull_request:
     branches: [ develop ]
 
 jobs:
