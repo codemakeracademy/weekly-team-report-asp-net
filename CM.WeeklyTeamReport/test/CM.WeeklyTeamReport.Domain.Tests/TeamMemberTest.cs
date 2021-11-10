@@ -13,8 +13,8 @@ namespace CM.WeeklyTeamReport.Domain.Tests
             var role = TeamMember.Roles.junior;
             TeamMember teamMember = new TeamMember(firstName, lastName, role);
             Assert.NotNull(teamMember);
-            Assert.Equal"John", teamMember.firstName);
-            Assert.Equal("Doe", teamMember.lastName);
+            Assert.Equal("John", teamMember.FirstName);
+            Assert.Equal("Doe", teamMember.LastName);
             Assert.Equal(TeamMember.Roles.junior, teamMember.Role);
         }
     }
