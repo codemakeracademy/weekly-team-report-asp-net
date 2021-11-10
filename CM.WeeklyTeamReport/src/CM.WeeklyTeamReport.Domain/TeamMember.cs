@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CM.WeeklyTeamReport.Domain
 {
-    class TeamMember
+    public class TeamMember
     {
     }
 }
