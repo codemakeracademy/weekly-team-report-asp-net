@@ -8,19 +8,14 @@ namespace CM.WeeklyTeamReport.Domain
         public string Country { get; set; }
         public string City { get; }
         private string _president;
-        public string President { 
-            get 
-            {
-                return _president;
-            } 
-        }
+        public string President { get; private set; }
 
         public Company(string companyName, string country, string city, string president)
         {
             CompanyName = companyName;
             Country = country;
             City = city;
-            _president = president;
+            President = president;
         }
         public void NewPresident(string newPresident)
         {
