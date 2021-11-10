@@ -1,10 +1,6 @@
 name: Tests
 
-on:
-  push:
-    branches: [ develop ]
-  pull_request:
-    branches: [ develop ]
+on: [push, pull_request]
 
 jobs:
   build:
@@ -18,10 +14,13 @@ jobs:
       with:
         dotnet-version: 5.0.x
     - name: Restore dependencies
+      working-directory: ./CM.WeeklyTeamReport
       run: dotnet restore
     - name: Build
+      working-directory: ./CM.WeeklyTeamReport
       run: dotnet build --no-restore
     - name: Test
-      run: dotnet test --collect:"XPlat Code Coverage"
+      working-directory: ./CM.WeeklyTeamReport
+      run: dotnet test --no-build --verbosity normal --collect:"XPlat Code Coverage"
     - name: Codecov upload
       uses: codecov/codecov-action@v2
