@@ -14,10 +14,10 @@ namespace CM.WeeklyTeamReport.Domain.Tests
             string president = "Hajime Satomi";
             Company company = new Company(companyName, country, city, president);
             Assert.NotNull(company);
-            Assert.Equal"Sega", company.CompanyName);
+            Assert.Equal("Sega", company.CompanyName);
             Assert.Equal("Japan", company.Country);
             Assert.Equal("Tokio", company.City);
-            Assert.Equal("Hajime Satomi", company.president);
+            Assert.Equal("Hajime Satomi", company.President);
         }
         [Fact]
         public void ShouldBeNewPresident()
@@ -27,9 +27,9 @@ namespace CM.WeeklyTeamReport.Domain.Tests
             string city = "Tokio";
             string president = "Hajime Satomi";
             Company company = new Company(companyName, country, city, president);
-            Assert.Equal("Hajime Satomi", company.president);
+            Assert.Equal("Hajime Satomi", company.President);
             company.NewPresident("Hironobu Sakaguchi");
-            Assert.Equal("Hironobu Sakaguchi", company.president);
+            Assert.Equal("Hironobu Sakaguchi", company.President);
         }
     }
 }
