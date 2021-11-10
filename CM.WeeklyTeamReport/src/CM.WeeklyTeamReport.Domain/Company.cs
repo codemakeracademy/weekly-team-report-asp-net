@@ -7,7 +7,6 @@ namespace CM.WeeklyTeamReport.Domain
         public string CompanyName { get; set; }
         public string Country { get; set; }
         public string City { get; }
-        private string _president;
         public string President { get; private set; }
 
         public Company(string companyName, string country, string city, string president)
@@ -19,7 +18,7 @@ namespace CM.WeeklyTeamReport.Domain
         }
         public void NewPresident(string newPresident)
         {
-            _president = newPresident;
+            President = newPresident;
         }
     }
 }
