@@ -20,3 +20,5 @@ jobs:
       run: dotnet test --no-build --verbosity normal --collect:"XPlat Code Coverage"
     - name: Codecov upload
       uses: codecov/codecov-action@v2
+      with:
+        token: f59e170e-c2bd-4b49-99de-ecbaa511be06
