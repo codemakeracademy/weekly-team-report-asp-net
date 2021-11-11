@@ -1,10 +1,6 @@
 name: .NET
 
-on:
-  push:
-    branches: [ feature/dotnet-solution ]
-  pull_request:
-    branches: [ feature/dotnet-solution ]
+on: [push, pull_request]
 
 jobs:
   build:
@@ -18,15 +14,13 @@ jobs:
       with:
         dotnet-version: 3.1.x
     - name: Restore dependencies
+      working-directory: ./CM.WeeklyTeamReport
       run: dotnet restore
-      working-directory: ./CM.WeeklyTeamReport
     - name: Build
+      working-directory: ./CM.WeeklyTeamReport
       run: dotnet build --no-restore
-      working-directory: ./CM.WeeklyTeamReport
     - name: Test
-      run: dotnet test --no-build --verbosity normal --collect:"XPlat Code Coverage"
       working-directory: ./CM.WeeklyTeamReport
+      run: dotnet test --no-build --verbosity normal --collect:"XPlat Code Coverage"
     - name: Codecov upload
       uses: codecov/codecov-action@v2
-      with:
-        token: 5b26fa19-cfb7-4ade-9c68-ea2922f5e7f7
