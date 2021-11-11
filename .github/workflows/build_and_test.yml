@@ -28,3 +28,5 @@ jobs:
       working-directory: ./CM.WeeklyTeamReport
     - name: Codecov upload
       uses: codecov/codecov-action@v2
+      with:
+        token: 5b26fa19-cfb7-4ade-9c68-ea2922f5e7f7
