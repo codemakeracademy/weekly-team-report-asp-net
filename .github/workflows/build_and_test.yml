@@ -22,7 +22,9 @@ jobs:
       working-directory: ./CM.WeeklyTeamReport
     - name: Build
       run: dotnet build --no-restore
+      working-directory: ./CM.WeeklyTeamReport
     - name: Test
       run: dotnet test --no-build --verbosity normal --collect:"XPlat Code Coverage"
+      working-directory: ./CM.WeeklyTeamReport
     - name: Codecov upload
       uses: codecov/codecov-action@v2
