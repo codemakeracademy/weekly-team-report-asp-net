@@ -1,15 +1,22 @@
-name: Test
-on: push
+name: .NET
+on: [push, pull_request]
 jobs:
-  test:
-    runs-on: ubuntu-18.04
-    name: Generate Test Reports
+  build:
+    runs-on: ubuntu-latest
     steps:
-      - name: XUnit Viewer
-        id: xunit-viewer
-        uses: AutoModality/action-xunit-viewer@v1  
-      - name: Attach the report
-        uses: actions/upload-artifact@v1
-        with:
-          name: ${{ steps.xunit-viewer.outputs.report-name }}
-          path: ${{ steps.xunit-viewer.outputs.report-dir }}
+    - uses: actions/checkout@v2
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.x
+    - name: Restore dependencies
+      working-directory: ./CM.WeeklyTeamReport
+      run: dotnet restore
+    - name: Build
+      working-directory: ./CM.WeeklyTeamReport
+      run: dotnet build --no-restore
+    - name: Test
+      working-directory: ./CM.WeeklyTeamReport
+      run: dotnet test --no-build --verbosity normal --collect:"XPlat Code Coverage"
+    - name: Codecov upload
+      uses: codecov/codecov-action@v2
