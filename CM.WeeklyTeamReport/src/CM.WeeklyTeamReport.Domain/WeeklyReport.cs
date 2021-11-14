@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CM.WeeklyTeamReport.Domain
 {
-    class WeeklyReport
+    public class WeeklyReport
     {
     }
 }
