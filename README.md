@@ -1,1 +1,1 @@
-[![codecov](https://codecov.io/gh/Xander11rgn/weekly-team-report-asp-net/branch/feature/dotnet-solution/graph/badge.svg?token=7659a4f7-0e3a-424f-853c-0034e3b7068b)](https://codecov.io/gh/artj15/weekly-team-report-asp-net)
+[![codecov](https://codecov.io/gh/artj15/weekly-team-report-asp-net/branch/feature/dotnet-solution/graph/badge.svg?token=32cf03f7-606e-4e27-825e-19b4a6c6b43c)](https://codecov.io/gh/artj15/weekly-team-report-asp-net)
