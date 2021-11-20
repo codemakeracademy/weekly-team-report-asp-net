@@ -12,10 +12,10 @@ namespace CM.WeeklyTeamReport.Domain
         public string InviteLink { get; set; }
         public string Mail { get; set; }
         public List<WeeklyReport> ReportsList { get; set; }
-        public List<WeeklyReport> ReportsListFromMember { get; set; }
-        public List<WeeklyReport> ReportsListToMember { get; set; }
+        public List<TeamMember> ReportsTo { get; set; }
+        public List<TeamMember> ReportsFrom { get; set; }
 
-        public TeamMember(string firstName, string lastName, string title, string inviteLink, string mail, List<WeeklyReport> reportsList, List<WeeklyReport> reportsListFromMember, List<WeeklyReport> reportsListToMember)
+        public TeamMember(string firstName, string lastName, string title, string inviteLink, string mail, List<WeeklyReport> reportsList, List<TeamMember> reportsListFromMember, List<TeamMember> reportsListToMember)
         {
             FirstName = firstName;
             LastName = lastName;
@@ -23,8 +23,8 @@ namespace CM.WeeklyTeamReport.Domain
             InviteLink = inviteLink;
             Mail = mail;
             ReportsList = reportsList;
-            ReportsListFromMember = reportsListFromMember;
-            ReportsListToMember = reportsListToMember;
+            ReportsTo = reportsListFromMember;
+            ReportsFrom = reportsListToMember;
         }
 
         public void UpdateMemberData(string firstName, string lastName, string title)
