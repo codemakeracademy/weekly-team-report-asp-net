@@ -10,11 +10,15 @@ namespace CM.WeeklyTeamReport.Domain.Tests
         [Fact]
         public void ShouldBeAbleToCreateCompanyObject()
         {
-            Company company = new Company("Company Name", teamMembers, "2021");
+            Company company = new Company("Company Name", teamMembers, "2021")
+            {
+                CompanyId = 1
+            };
             Assert.NotNull(company);
             Assert.Equal("Company Name", company.CompanyName);
             Assert.Equal(teamMembers, company.TeamMembers);
             Assert.Equal("2021", company.JoinDate);
+            Assert.Equal(1, company.CompanyId);
         }
 
         [Theory]

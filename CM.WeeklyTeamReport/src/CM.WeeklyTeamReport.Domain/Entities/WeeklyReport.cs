@@ -6,6 +6,7 @@ namespace CM.WeeklyTeamReport.Domain
 {
     public class WeeklyReport
     {
+        public int WeeklyReportId { get; set; }
         public string StartDate { get; set; }
         public string EndDate { get; set; }
         public string Year { get; set; }
@@ -18,6 +19,7 @@ namespace CM.WeeklyTeamReport.Domain
         public string WeekHighComment { get; set; }
         public string WeekLowComment { get; set; }
         public string AnythingElseComment { get; set; }
+        public int TeamMemberId { get; set; }
 
         public WeeklyReport(string startDate, string endDate, string year, Morales moraleValue, Morales stressValue, Morales workloadValue, string moraleComment, string stressComment, string workloadComment, string weekHighComment, string weekLowComment, string anythingElseComment)
         {

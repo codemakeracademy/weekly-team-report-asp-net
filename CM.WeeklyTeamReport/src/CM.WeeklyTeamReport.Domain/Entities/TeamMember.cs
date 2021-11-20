@@ -6,6 +6,7 @@ namespace CM.WeeklyTeamReport.Domain
 {
     public class TeamMember
     {
+        public int TeamMemberId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Title { get; set; }
@@ -14,6 +15,7 @@ namespace CM.WeeklyTeamReport.Domain
         public List<WeeklyReport> ReportsList { get; set; }
         public List<TeamMember> ReportsTo { get; set; }
         public List<TeamMember> ReportsFrom { get; set; }
+        public int CompanyId { get; set; }
 
         public TeamMember(string firstName, string lastName, string title, string inviteLink, string mail, List<WeeklyReport> reportsList, List<TeamMember> reportsListFromMember, List<TeamMember> reportsListToMember)
         {

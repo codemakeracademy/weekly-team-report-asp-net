@@ -10,7 +10,11 @@ namespace CM.WeeklyTeamReport.Domain.Tests
         [Fact]
         public void ShouldBeAbleToCreateWeeklyReportObject()
         {
-            WeeklyReport weeklyReport = new WeeklyReport("May 9", "May 16", "2020", Morales.Okay, Morales.Low, Morales.Great, "adawd", "adad", "wdad", "adawd", "adad", "wdad");
+            WeeklyReport weeklyReport = new WeeklyReport("May 9", "May 16", "2020", Morales.Okay, Morales.Low, Morales.Great, "adawd", "adad", "wdad", "adawd", "adad", "wdad")
+            {
+                WeeklyReportId = 1,
+                TeamMemberId = 2
+            };
             Assert.NotNull(weeklyReport);
             Assert.Equal("May 9", weeklyReport.StartDate);
             Assert.Equal("May 16", weeklyReport.EndDate);
@@ -24,6 +28,8 @@ namespace CM.WeeklyTeamReport.Domain.Tests
             Assert.Equal("adawd", weeklyReport.WeekHighComment);
             Assert.Equal("adad", weeklyReport.WeekLowComment);
             Assert.Equal("wdad", weeklyReport.AnythingElseComment);
+            Assert.Equal(1, weeklyReport.WeeklyReportId);
+            Assert.Equal(2, weeklyReport.TeamMemberId);
         }
     }
 }

@@ -13,7 +13,11 @@ namespace CM.WeeklyTeamReport.Domain.Tests
         [Fact]
         public void ShouldBeAbleToCreateTeamMemberObject()
         {
-            TeamMember teamMember = new TeamMember("Name", "Surname", "CEO", "someUrl", "awdaw@ad.wad", reportsList, reportsTo, reportsFrom);
+            TeamMember teamMember = new TeamMember("Name", "Surname", "CEO", "someUrl", "awdaw@ad.wad", reportsList, reportsTo, reportsFrom)
+            {
+                TeamMemberId = 1,
+                CompanyId = 2
+            };
             Assert.NotNull(teamMember);
             Assert.Equal("Name", teamMember.FirstName);
             Assert.Equal("Surname", teamMember.LastName);
@@ -23,6 +27,8 @@ namespace CM.WeeklyTeamReport.Domain.Tests
             Assert.Equal(reportsList, teamMember.ReportsList);
             Assert.Equal(reportsTo, teamMember.ReportsTo);
             Assert.Equal(reportsFrom, teamMember.ReportsFrom);
+            Assert.Equal(1, teamMember.TeamMemberId);
+            Assert.Equal(2, teamMember.CompanyId);
         }
 
         [Theory]

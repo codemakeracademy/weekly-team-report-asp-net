@@ -14,6 +14,11 @@
     [AnythingElseComment] NVARCHAR (MAX) NULL,
     [TeamMemberId]        INT            NOT NULL,
     CONSTRAINT [PK_WeeklyReports] PRIMARY KEY CLUSTERED ([WeeklyReportId] ASC),
+    CONSTRAINT [FK_WeeklyReports_Morales] FOREIGN KEY ([MoraleValueId]) REFERENCES [dbo].[Morales] ([MoraleId]),
+    CONSTRAINT [FK_WeeklyReports_Morales1] FOREIGN KEY ([StressValueId]) REFERENCES [dbo].[Morales] ([MoraleId]),
+    CONSTRAINT [FK_WeeklyReports_Morales2] FOREIGN KEY ([WorkloadValueId]) REFERENCES [dbo].[Morales] ([MoraleId]),
     CONSTRAINT [FK_WeeklyReports_TeamMembers] FOREIGN KEY ([TeamMemberId]) REFERENCES [dbo].[TeamMembers] ([TeamMemberId])
 );
+
+
 
